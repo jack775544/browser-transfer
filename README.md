@@ -24,7 +24,7 @@ Next remove conflicting files from the downloaded repo.
 Now install the repo
 
     git init
-    git remote add origin https://bitbucket.org/jack775544/browser-transfer.git
+    git remote add origin https://github.com/jack775544/browser-transfer.git
     git fetch
     git checkout -t origin/master
 
