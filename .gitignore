@@ -1,3 +1,14 @@
 /vendor
 /composer.phar
 /.idea
+
+.travis.yml
+AUTHORS
+CHANGELOG.md
+build/
+composer.json
+composer.lock
+phpseclib/
+phpunit.xml.dist
+tests/
+travis/
