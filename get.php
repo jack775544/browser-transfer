@@ -5,9 +5,8 @@ session_start();
 
 $username = $_SESSION["username"];
 $password = $_SESSION["password"];
-//$filename = $_POST["filename"];
 
-$sftp = new \phpseclib\Net\SFTP('remote.labs.eait.uq.edu.au');
+$sftp = new \phpseclib\Net\SFTP($_SESSION["remote"]);
 if (!$sftp->login($username, $password)) {
     exit('Login Failed');
 }
@@ -15,7 +14,7 @@ $filename = $_GET["filename"];
 //$filename = 'ass1spec.pdf';
 header('Content-Type: application/octet-stream');
 header("Content-Transfer-Encoding: Binary");
-header("Content-disposition: attachment; filename=" . $filename . "");
+header("Content-disposition: attachment; filename=" . urlencode($filename) . "");
 
 // outputs the contents of filename.remote to the screen
 echo $sftp->get($filename);

@@ -43,18 +43,19 @@ $(document).ready(function () {
             var size = '';
             if (file[5] == 2) {
                 type = '<span style="color:red">Folder: ';
-                close = '</span></li>';
+                close = '</span>';
             } else if (file[5] == 1) {
                 type = '<span>File: <a href="get.php?filename=' + file[8] + '">';
                 size = ' ' + file[0] + 'kb';
-                close = '</span></a>' + size + '</li>';
+                close = '</span></a>' + size;
             } else {
                 type = '<span>Other: ';
-                close = '</span></li>';
+                close = '</span>';
             }
-            $('#items').append('<li>');
-            $('#items').append(type + file[8]);
-            $('#items').append(close);
+            //$('#items').append();
+            $('#items').append('<li>' + type + file[8] + '</li>');
+            //$('#items').append(close);
+            //$('#items').append('</li>');
             console.log('rip');
         }
     }

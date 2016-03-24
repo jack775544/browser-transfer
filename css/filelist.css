@@ -1,0 +1,26 @@
+#items > li{
+    float: left;
+    height: 130px;
+    width: 100px;
+    margin: 5px;
+    background-color: #888a85;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+#items > li > img{
+    height: 96px;
+    width: 96px;
+}
+
+#items{
+    list-style-type: none;
+}
+
+#filecontainer{
+    background-color: red;
+}
+
+#filecontainer + form{
+    clear: both;
+}
