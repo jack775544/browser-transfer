@@ -77,11 +77,11 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         print_r('<ol id="items">' . "\n");
         foreach ($contents['items'] as $key => $value) {
             $item = $value['filename'];
-            $filename = $item[8];
             $size = $item[0];
             $type = $item[5]; // 1 is file, 2 is folder, 3 is symlink, 4 is other
             $created = $item[6];
             $modified = $item[7];
+            $filename = $item[8];
             $textType = '';
             $img = '';
             $url = '';

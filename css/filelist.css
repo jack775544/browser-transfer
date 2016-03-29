@@ -9,6 +9,7 @@
 
 #items > li > a {
     display: block;
+    /* Height is above height - 4*/
     height: 116px;
     width: 100px;
     padding: 2px;
