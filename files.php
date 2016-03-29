@@ -37,26 +37,32 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         $filename = $item[8];
         $size = $item[0];
         $type = $item[5]; // 1 is file, 2 is folder, 3 is symlink, 4 is other
+        $created = $item[6];
+        $modified = $item[7];
+        $textType = '';
         $img = '';
         $url = '';
         switch ($type) {
             case(1):
                 $img = 'img/icons/document.png';
                 $url = 'get.php?filename=' . $filename;
+                $textType = 'file';
                 break;
 
             case(2):
                 $img = 'img/icons/folder.png';
                 $url = '#';
+                $textType = 'folder';
                 break;
 
             default:
                 $img = 'img/icons/folder.png';
                 $url = '#';
+                $textType = 'other';
                 break;
         }
-        $statement = "<li><img src='%s'><a href='%s'>%s</a></li>";
-        $statement = sprintf($statement, $img, $url, $filename);
+        $statement = "<li><a class='itemlink' href='%s' data-modified='%s' data-created='%s' data-name='%s' data-size='%s' data-type='%s'><img src='%s'>%s</a></li>";
+        $statement = sprintf($statement, $url, $modified, $created, $filename, $size, $textType, $img, $filename);
         print_r($statement . "\n");
     }
     print_r('</ol>');

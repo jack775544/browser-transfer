@@ -13,9 +13,9 @@ if ((isset($_SESSION["username"])) && (isset($_SESSION["password"])) && (isset($
 
 <form action="session.php" method="post">
     <label for="remote">SFTP Server Address:</label>
-    <input type="text" name="remote" id="remote" /><br>
+    <input type="text" name="remote" id="remote" value="remote.labs.eait.uq.edu.au"/><br>
     <label for="username">Username:</label>
-    <input type="text" name="username" id="username" /><br>
+    <input type="text" name="username" id="username" value="s4356183"/><br>
     <label for="password">Password:</label>
     <input type="password" name="password" id="password" /><br>
     <br />

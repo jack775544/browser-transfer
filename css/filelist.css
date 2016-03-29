@@ -1,26 +1,79 @@
-#items > li{
+#items > li {
     float: left;
     height: 130px;
     width: 100px;
     margin: 5px;
-    background-color: #888a85;
+    background-color: #c9cac6;
     border-radius: 5px;
+}
+
+#items > li > a {
+    display: block;
+    height: 130px;
+    width: 100px;
     padding: 2px;
 }
 
-#items > li > img{
+#items > li:hover{
+    background-color: #888a85;
+}
+
+#items > li > a > img {
     height: 96px;
     width: 96px;
 }
 
-#items{
+#items {
     list-style-type: none;
 }
 
-#filecontainer{
-    background-color: red;
+.row {
+    margin: 0px 15px 0px 15px;
 }
 
-#filecontainer + form{
-    clear: both;
+#logout {
+    margin-top: 20px;
+}
+
+.files {
+    padding: 0px;
+    margin: 0;
+}
+
+.files > .row {
+    padding: 2px;
+}
+
+#items {
+    padding: 0px;
+}
+
+#lightbox {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(150, 150, 150, 0.5);
+    padding-top: 40px;
+}
+
+#closeLightbox{
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+}
+
+#lightbox > .container > .jumbotron > div{
+
+}
+
+button > .glyphicon {
+    margin-right: 3px;
+}
+
+.btn {
+    background-color: #c9cac6;
 }

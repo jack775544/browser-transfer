@@ -1,24 +1,42 @@
+var buildLightbox;
 $(document).ready(function () {
     var username;
     var password;
 
-    $('#submit').click(function () {
-        $('#test').text('');
-        username = $('#username').val();
-        password = $('#password').val();
-        console.log('clicked');
-        setSession();
+    $('.itemlink').click(function(e){
+        e.preventDefault();
+        var url = this.href;
+        var name = this.dataset.name;
+        var lightbox = buildLightbox(this.dataset.name, this.href, this.dataset.created, this.dataset.modified, this.dataset.size);
+        $("body").append(lightbox);
     });
 
-    function setSession(){
-        $.ajax({
-            type: "POST",
-            url: './session.php',
-            data: {"username": username, "password": password}
-        }).done(function (r) {
-            console.log('Session Done');
-            ajaxConnect();
-        });
+    buildLightbox = function(name, url, created, modified, size){
+        var lightbox = $('<div></div>', {id: 'lightbox'});
+        var content = $('<div></div>', {class: 'container'});
+        var jumbo = $('<div></div>', {class: 'jumbotron'});
+        $('<div id="closeLightbox"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>').appendTo(jumbo);
+        $('<h2>' + name + '</h2>').appendTo(jumbo);
+        $('<div> Date Created: ' + created + '</div>').appendTo(jumbo);
+        $('<div> Last Modified: ' + modified + '</div>').appendTo(jumbo);
+        $('<div> Size: ' + size + ' bytes</div>').appendTo(jumbo);
+        $('<a href="'+ url + '">Download</a>').appendTo(jumbo);
+
+        content.append(jumbo);
+        lightbox.append(content);
+
+        content.click(stopProp);
+        lightbox.click(closeLightbox);
+        return lightbox;
+    };
+
+    function stopProp(e){ // and roll!
+        e.stopPropagation();
+    }
+
+    function closeLightbox(e){
+        e.stopPropagation();
+        $("#lightbox").remove();
     }
 
     function ajaxConnect() {

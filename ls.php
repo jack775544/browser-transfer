@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)){
+    session_start();
+}
 include 'vendor/autoload.php';
 
 if (isset($json)) {
@@ -26,7 +29,7 @@ $response = '{"items": [';
 foreach ($ls as $item) {
     $response = $response . '{"filename": ["' . implode('", "', $item) . '"]}, ';
 }
-$response = substr($response, 0, -2);
+$response = substr($response, 0, -2); // Remove final comma and space
 $response = $response . ']}';
 
 echo $response;
