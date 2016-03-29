@@ -1,6 +1,6 @@
 #items > li {
     float: left;
-    height: 130px;
+    height: 120px;
     width: 100px;
     margin: 5px;
     background-color: #c9cac6;
@@ -9,9 +9,11 @@
 
 #items > li > a {
     display: block;
-    height: 130px;
+    height: 116px;
     width: 100px;
     padding: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #items > li:hover{
@@ -76,4 +78,18 @@ button > .glyphicon {
 
 .btn {
     background-color: #c9cac6;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body > * {
+    flex-shrink: 0;
+}
+
+body > div:last-of-type {
+    flex-grow: 1;
 }
