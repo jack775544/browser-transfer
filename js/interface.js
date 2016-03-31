@@ -1,4 +1,3 @@
-var buildLightbox;
 $(document).ready(function () {
     var username;
     var password;
@@ -7,11 +6,11 @@ $(document).ready(function () {
         e.preventDefault();
         var url = this.href;
         var name = this.dataset.name;
-        var lightbox = buildLightbox(this.dataset.name, this.href, this.dataset.created, this.dataset.modified, this.dataset.size);
+        var lightbox = buildLightbox(this.dataset.name, this.href, this.dataset.created, this.dataset.modified, this.dataset.size, this.dataset.linkname);
         $("body").append(lightbox);
     });
 
-    buildLightbox = function(name, url, created, modified, size){
+    var buildLightbox = buildLightbox = function(name, url, created, modified, size, linkname){
         var lightbox = $('<div></div>', {id: 'lightbox'});
         var content = $('<div></div>', {class: 'container'});
         var jumbo = $('<div></div>', {class: 'jumbotron'});
@@ -21,6 +20,8 @@ $(document).ready(function () {
         $('<div> Last Modified: ' + modified + '</div>').appendTo(jumbo);
         $('<div> Size: ' + size + ' bytes</div>').appendTo(jumbo);
         $('<a href="'+ url + '">Download</a>').appendTo(jumbo);
+        $('<br>').appendTo(jumbo);
+        $('<a href="edit.php?filename='+ linkname + '" target="_blank">Edit</a>').appendTo(jumbo);
 
         content.append(jumbo);
         lightbox.append(content);

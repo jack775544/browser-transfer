@@ -45,7 +45,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         </form>
     </div>
 </div>
-<div class="jumbotron files">
+<div class="jumbotron row files">
     <div class="row">
         <button type="button" id="refresh" class="btn"><span class="glyphicon glyphicon-refresh"
                                                              aria-hidden="true"></span>Refresh
@@ -56,6 +56,8 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
     <div class="row">
         /home/students/s4356183
     </div>
+</div>
+<div class="jumbotron files row">
     <div id="filecontainer" class="row">
         <?php
         function get_include_contents($filename)
@@ -104,8 +106,8 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
                     $textType = 'other';
                     break;
             }
-            $statement = "<li><a class='itemlink' href='%s' data-modified='%s' data-created='%s' data-name='%s' data-size='%s' data-type='%s'><img src='%s'>%s</a></li>";
-            $statement = sprintf($statement, $url, $modified, $created, $filename, $size, $textType, $img, $filename);
+            $statement = "<li><a class='itemlink' href='%s' data-modified='%s' data-created='%s' data-name='%s' data-size='%s' data-type='%s' data-linkname='%s'><img src='%s'>%s</a></li>";
+            $statement = sprintf($statement, $url, $modified, $created, $filename, $size, $textType, rawurlencode($filename) ,$img, $filename);
             print_r($statement . "\n");
         }
         print_r('</ol>');

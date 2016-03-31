@@ -17,7 +17,7 @@
     text-overflow: ellipsis;
 }
 
-#items > li:hover{
+#items > li:hover {
     background-color: #888a85;
 }
 
@@ -62,14 +62,14 @@
     padding-top: 40px;
 }
 
-#closeLightbox{
+#closeLightbox {
     position: absolute;
     z-index: 9999;
     top: 0;
     right: 0;
 }
 
-#lightbox > .container > .jumbotron > div{
+#lightbox > .container > .jumbotron > div {
 
 }
 
@@ -95,8 +95,15 @@ body > div:last-of-type {
     flex-grow: 1;
 }
 
-#editrow{
+#editor {
+    border-radius: 0;
+    border: none;
+}
+
+#editrow {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #editrow > pre {
@@ -106,4 +113,8 @@ body > div:last-of-type {
 #editrow * {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.jumbotron {
+    background-color: #f0f0f0;
 }

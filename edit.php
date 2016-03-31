@@ -59,12 +59,26 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
 </div>
 <div class="jumbotron files row">
     <div class="row" id="editrow">
-        <pre id="editor">function foo(items) {
-    var i;
-    for (i = 0; i &lt; items.length; i++) {
-        alert("Ace Rocks " + items[i]);
-    }
-}</pre>
+        <pre id="editor">
+<?php
+include 'vendor/autoload.php';
+
+$username = $_SESSION["username"];
+$password = $_SESSION["password"];
+
+$sftp = new \phpseclib\Net\SFTP($_SESSION["remote"]);
+if (!$sftp->login($username, $password)) {
+    exit('Login Failed');
+}
+
+$filename = $_GET['filename'];
+
+// outputs the contents of filename.remote to the screen
+echo $sftp->get($filename);
+// copies filename.remote to filename.local from the SFTP server
+//$sftp->get('Mapper.py', 'Mapper.py');
+?>
+        </pre>
     </div>
 </div>
 
@@ -72,12 +86,8 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
 <script src="bootstrap/bootstrap.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="bootstrap/ie10-viewport-bug-workaround.js"></script>
+<script src="js/common.js" type="text/javascript"></script>
 <script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/twilight");
-    editor.session.setMode("ace/mode/javascript");
-</script>
-<script src="js/interface.js" type="text/javascript"></script>
+<script src="js/edit.js" type="text/javascript"></script>
 </body>
 </html>
