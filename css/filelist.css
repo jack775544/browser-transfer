@@ -94,3 +94,16 @@ body > * {
 body > div:last-of-type {
     flex-grow: 1;
 }
+
+#editrow{
+    height: 100%;
+}
+
+#editrow > pre {
+    height: 100%;
+}
+
+#editrow * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
