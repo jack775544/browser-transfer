@@ -34,7 +34,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         /home/students/s4356183
     </div>
 </div>
-<div class="jumbotron files row">
+<div class="jumbotron files row" id="editjumbo">
     <div class="row" id="editrow">
         <pre id="editor">
 <?php
