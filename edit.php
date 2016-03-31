@@ -86,8 +86,8 @@ echo $sftp->get($filename);
 <script src="bootstrap/bootstrap.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="bootstrap/ie10-viewport-bug-workaround.js"></script>
+<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/common.js" type="text/javascript"></script>
-<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/edit.js" type="text/javascript"></script>
 </body>
 </html>
