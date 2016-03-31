@@ -57,6 +57,7 @@ echo $sftp->get($filename);
 
 <?php include 'includes/bootstrapjs.php'; ?>
 <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="ace/ext-modelist.js" type="text/javascript"></script>
 <script src="js/common.js" type="text/javascript"></script>
 <script src="js/edit.js" type="text/javascript"></script>
 </body>
