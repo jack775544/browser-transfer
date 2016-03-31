@@ -23,8 +23,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="css/filelist.css">
-</head>
+    <link rel="stylesheet" href="css/filelist.css"></head>
 <body>
 <div class="row">
     <div class="col-sm-11">
@@ -36,110 +35,45 @@
         </form>
     </div>
 </div>
-<div class="jumbotron files">
+<div class="jumbotron row files">
     <div class="row">
-        <button type="button" id="refresh" class="btn"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Refresh</button>
-        <button type="button" id="upload" class="btn"><span class="glyphicon glyphicon-open" aria-hidden="true"></span>Upload</button>
+        <button type="button" id="refresh" class="btn"><span class="glyphicon glyphicon-refresh"
+                                                             aria-hidden="true"></span>Refresh
+        </button>
+        <button type="button" id="upload" class="btn"><span class="glyphicon glyphicon-open" aria-hidden="true"></span>Upload
+        </button>
     </div>
     <div class="row">
         /home/students/s4356183
     </div>
-    <div id="filecontainer" class="row">
-        <ol id="items">
-            <li><a class='itemlink' href='#' data-modified='1459217059' data-created='1404590000' data-name='.' data-size='85'><img src='img/icons/folder.png'>.</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458706031' data-created='1450997936' data-name='..' data-size='14603'><img src='img/icons/folder.png'>..</a></li>
-            <li><a class='itemlink' href='#' data-modified='1445236035' data-created='1431563162' data-name='hive' data-size='15'><img src='img/icons/folder.png'>hive</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458701951' data-created='1431907677' data-name='CSSE2002' data-size='6'><img src='img/icons/folder.png'>CSSE2002</a></li>
-            <li><a class='itemlink' href='#' data-modified='1439961671' data-created='1439961660' data-name='test' data-size='3'><img src='img/icons/folder.png'>test</a></li>
-            <li><a class='itemlink' href='get.php?filename=infszone' data-modified='1457598784' data-created='1457598784' data-name='infszone' data-size='40'><img src='img/icons/document.png'>infszone</a></li>
-            <li><a class='itemlink' href='#' data-modified='1444024327' data-created='1425448677' data-name='.emacs.d' data-size='3'><img src='img/icons/folder.png'>.emacs.d</a></li>
-            <li><a class='itemlink' href='get.php?filename=testoing.py' data-modified='1401412761' data-created='1401412761' data-name='testoing.py' data-size='383'><img src='img/icons/document.png'>testoing.py</a></li>
-            <li><a class='itemlink' href='#' data-modified='1446370242' data-created='1446299632' data-name='.irssi' data-size='4'><img src='img/icons/folder.png'>.irssi</a></li>
-            <li><a class='itemlink' href='get.php?filename=LED Matrix SPI Communication Reference(1).pdf' data-modified='1431571503' data-created='1431571514' data-name='LED Matrix SPI Communication Reference(1).pdf' data-size='81047'><img src='img/icons/document.png'>LED Matrix SPI Communication Reference(1).pdf</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458612877' data-created='1404590000' data-name='Download' data-size='7'><img src='img/icons/folder.png'>Download</a></li>
-            <li><a class='itemlink' href='get.php?filename=error' data-modified='1438300965' data-created='1438300965' data-name='error' data-size='57'><img src='img/icons/document.png'>error</a></li>
-            <li><a class='itemlink' href='get.php?filename=python.PNG' data-modified='1458010305' data-created='1458010305' data-name='python.PNG' data-size='24743'><img src='img/icons/document.png'>python.PNG</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458614040' data-created='1458614040' data-name='.gem' data-size='3'><img src='img/icons/folder.png'>.gem</a></li>
-            <li><a class='itemlink' href='get.php?filename=Athlete.txt' data-modified='1431571543' data-created='1431571550' data-name='Athlete.txt' data-size='1316114'><img src='img/icons/document.png'>Athlete.txt</a></li>
-            <li><a class='itemlink' href='get.php?filename=.gitconfig' data-modified='1430096332' data-created='1430096332' data-name='.gitconfig' data-size='92'><img src='img/icons/document.png'>.gitconfig</a></li>
-            <li><a class='itemlink' href='get.php?filename=ass1.c' data-modified='1439615816' data-created='1439615816' data-name='ass1.c' data-size='1184'><img src='img/icons/document.png'>ass1.c</a></li>
-            <li><a class='itemlink' href='get.php?filename=tryvim.py' data-modified='1425450915' data-created='1425450915' data-name='tryvim.py' data-size='226'><img src='img/icons/document.png'>tryvim.py</a></li>
-            <li><a class='itemlink' href='get.php?filename=.bash_history' data-modified='1458984654' data-created='1409633066' data-name='.bash_history' data-size='7357'><img src='img/icons/document.png'>.bash_history</a></li>
-            <li><a class='itemlink' href='get.php?filename=week4prac1.circ' data-modified='1427154689' data-created='1427154689' data-name='week4prac1.circ' data-size='4235'><img src='img/icons/document.png'>week4prac1.circ</a></li>
-            <li><a class='itemlink' href='get.php?filename=FileZilla_3.9.0.5_win32.zip' data-modified='1413425630' data-created='1413425648' data-name='FileZilla_3.9.0.5_win32.zip' data-size='8952362'><img src='img/icons/document.png'>FileZilla_3.9.0.5_win32.zip</a></li>
-            <li><a class='itemlink' href='get.php?filename=EMP_PROJECT.txt' data-modified='1410397315' data-created='1410397315' data-name='EMP_PROJECT.txt' data-size='865948'><img src='img/icons/document.png'>EMP_PROJECT.txt</a></li>
-            <li><a class='itemlink' href='get.php?filename=#data.txt#' data-modified='1425448753' data-created='1425448753' data-name='#data.txt#' data-size='118'><img src='img/icons/document.png'>#data.txt#</a></li>
-            <li><a class='itemlink' href='get.php?filename=Mapper.py' data-modified='1431571554' data-created='1431571555' data-name='Mapper.py' data-size='586'><img src='img/icons/document.png'>Mapper.py</a></li>
-            <li><a class='itemlink' href='get.php?filename=newtest.py' data-modified='1438300565' data-created='1438300565' data-name='newtest.py' data-size='39'><img src='img/icons/document.png'>newtest.py</a></li>
-            <li><a class='itemlink' href='#' data-modified='1440555294' data-created='1440555294' data-name='home' data-size='3'><img src='img/icons/folder.png'>home</a></li>
-            <li><a class='itemlink' href='get.php?filename=ass1spec.pdf' data-modified='1439639130' data-created='1438161772' data-name='ass1spec.pdf' data-size='119303'><img src='img/icons/document.png'>ass1spec.pdf</a></li>
-            <li><a class='itemlink' href='#' data-modified='1407816435' data-created='1404590000' data-name='Thunderbird' data-size='26'><img src='img/icons/folder.png'>Thunderbird</a></li>
-            <li><a class='itemlink' href='#' data-modified='1446350252' data-created='1446350252' data-name='.pki' data-size='3'><img src='img/icons/folder.png'>.pki</a></li>
-            <li><a class='itemlink' href='get.php?filename=week9.zip' data-modified='1431302618' data-created='1431302723' data-name='week9.zip' data-size='13089'><img src='img/icons/document.png'>week9.zip</a></li>
-            <li><a class='itemlink' href='get.php?filename=texput.log' data-modified='1446122856' data-created='1446122856' data-name='texput.log' data-size='670'><img src='img/icons/document.png'>texput.log</a></li>
-            <li><a class='itemlink' href='#' data-modified='1409792651' data-created='1407980937' data-name='INFS2200' data-size='6'><img src='img/icons/folder.png'>INFS2200</a></li>
-            <li><a class='itemlink' href='get.php?filename=.metadata_never_index' data-modified='1406264663' data-created='1406264663' data-name='.metadata_never_index' data-size='0'><img src='img/icons/document.png'>.metadata_never_index</a></li>
-            <li><a class='itemlink' href='#' data-modified='1438299110' data-created='1430096910' data-name='week3' data-size='6'><img src='img/icons/folder.png'>week3</a></li>
-            <li><a class='itemlink' href='get.php?filename=.hivehistory' data-modified='1445236029' data-created='1431563162' data-name='.hivehistory' data-size='4431'><img src='img/icons/document.png'>.hivehistory</a></li>
-            <li><a class='itemlink' href='#' data-modified='1441618381' data-created='1441618381' data-name='svtest' data-size='2'><img src='img/icons/folder.png'>svtest</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458006929' data-created='1426464006' data-name='Links' data-size='7'><img src='img/icons/folder.png'>Links</a></li>
-            <li><a class='itemlink' href='#' data-modified='1438139889' data-created='1431302778' data-name='week9' data-size='16'><img src='img/icons/folder.png'>week9</a></li>
-            <li><a class='itemlink' href='get.php?filename=.lesshst' data-modified='1440576014' data-created='1438299256' data-name='.lesshst' data-size='41'><img src='img/icons/document.png'>.lesshst</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458612345' data-created='1413425127' data-name='repo' data-size='5'><img src='img/icons/folder.png'>repo</a></li>
-            <li><a class='itemlink' href='get.php?filename=topout.txt' data-modified='1446770769' data-created='1446770765' data-name='topout.txt' data-size='6192'><img src='img/icons/document.png'>topout.txt</a></li>
-            <li><a class='itemlink' href='get.php?filename=.swo' data-modified='1439690473' data-created='1439690457' data-name='.swo' data-size='12288'><img src='img/icons/document.png'>.swo</a></li>
-            <li><a class='itemlink' href='get.php?filename=mapper.txt' data-modified='1458726959' data-created='1458726959' data-name='mapper.txt' data-size='586'><img src='img/icons/document.png'>mapper.txt</a></li>
-            <li><a class='itemlink' href='#' data-modified='1431303011' data-created='1427166218' data-name='Apps' data-size='8'><img src='img/icons/folder.png'>Apps</a></li>
-            <li><a class='itemlink' href='get.php?filename=.DS_Store' data-modified='1408417183' data-created='1407815321' data-name='.DS_Store' data-size='15364'><img src='img/icons/document.png'>.DS_Store</a></li>
-            <li><a class='itemlink' href='#' data-modified='1446350195' data-created='1446350195' data-name='comp3506' data-size='2'><img src='img/icons/folder.png'>comp3506</a></li>
-            <li><a class='itemlink' href='#' data-modified='1439953358' data-created='1439953358' data-name='.subversion' data-size='6'><img src='img/icons/folder.png'>.subversion</a></li>
-            <li><a class='itemlink' href='#' data-modified='1446350251' data-created='1446350225' data-name='comp3702' data-size='3'><img src='img/icons/folder.png'>comp3702</a></li>
-            <li><a class='itemlink' href='#' data-modified='1438230972' data-created='1438230972' data-name='.matlab' data-size='3'><img src='img/icons/folder.png'>.matlab</a></li>
-            <li><a class='itemlink' href='#' data-modified='1407207182' data-created='1407207182' data-name='.Trash' data-size='2'><img src='img/icons/folder.png'>.Trash</a></li>
-            <li><a class='itemlink' href='#' data-modified='1457483598' data-created='1409632747' data-name='.ssh' data-size='5'><img src='img/icons/folder.png'>.ssh</a></li>
-            <li><a class='itemlink' href='#' data-modified='1413425502' data-created='1413425487' data-name='php-5.6.2-nts-Win32-VC11-x86' data-size='41'><img src='img/icons/folder.png'>php-5.6.2-nts-Win32-VC11-x86</a></li>
-            <li><a class='itemlink' href='get.php?filename=BodystormingCritiques-1.pdf' data-modified='1401414562' data-created='1401414610' data-name='BodystormingCritiques-1.pdf' data-size='230681'><img src='img/icons/document.png'>BodystormingCritiques-1.pdf</a></li>
-            <li><a class='itemlink' href='get.php?filename=Untitled-2.svg' data-modified='1407815140' data-created='1407815139' data-name='Untitled-2.svg' data-size='12069'><img src='img/icons/document.png'>Untitled-2.svg</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458009573' data-created='1458007171' data-name='bin' data-size='150'><img src='img/icons/folder.png'>bin</a></li>
-            <li><a class='itemlink' href='get.php?filename=testoutput.txt' data-modified='1425450948' data-created='1425450873' data-name='testoutput.txt' data-size='16'><img src='img/icons/document.png'>testoutput.txt</a></li>
-            <li><a class='itemlink' href='#' data-modified='1431568957' data-created='1429756525' data-name='CSSE2010' data-size='12'><img src='img/icons/folder.png'>CSSE2010</a></li>
-            <li><a class='itemlink' href='get.php?filename=.test.c.swp' data-modified='1439507128' data-created='1439507090' data-name='.test.c.swp' data-size='12288'><img src='img/icons/document.png'>.test.c.swp</a></li>
-            <li><a class='itemlink' href='get.php?filename=._Untitled-2.svg' data-modified='1407815140' data-created='1407815139' data-name='._Untitled-2.svg' data-size='4096'><img src='img/icons/document.png'>._Untitled-2.svg</a></li>
-            <li><a class='itemlink' href='#' data-modified='1413425655' data-created='1413425655' data-name='FileZilla_3.9.0.5_win32' data-size='3'><img src='img/icons/folder.png'>FileZilla_3.9.0.5_win32</a></li>
-            <li><a class='itemlink' href='#' data-modified='1439961850' data-created='1439961850' data-name='tests' data-size='35'><img src='img/icons/folder.png'>tests</a></li>
-            <li><a class='itemlink' href='#' data-modified='1431302778' data-created='1431302778' data-name='__MACOSX' data-size='3'><img src='img/icons/folder.png'>__MACOSX</a></li>
-            <li><a class='itemlink' href='get.php?filename=ruby.PNG' data-modified='1458010347' data-created='1458010347' data-name='ruby.PNG' data-size='29113'><img src='img/icons/document.png'>ruby.PNG</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458006928' data-created='1404590000' data-name='Desktop' data-size='5'><img src='img/icons/folder.png'>Desktop</a></li>
-            <li><a class='itemlink' href='#' data-modified='1407816461' data-created='1407207164' data-name='Library' data-size='20'><img src='img/icons/folder.png'>Library</a></li>
-            <li><a class='itemlink' href='#' data-modified='1394748692' data-created='1404590000' data-name='.idlerc' data-size='2'><img src='img/icons/folder.png'>.idlerc</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458006928' data-created='1404590000' data-name='Favorites' data-size='7'><img src='img/icons/folder.png'>Favorites</a></li>
-            <li><a class='itemlink' href='get.php?filename=.swn' data-modified='1442628464' data-created='1442628413' data-name='.swn' data-size='12288'><img src='img/icons/document.png'>.swn</a></li>
-            <li><a class='itemlink' href='get.php?filename=.swp' data-modified='1439690436' data-created='1439690422' data-name='.swp' data-size='12288'><img src='img/icons/document.png'>.swp</a></li>
-            <li><a class='itemlink' href='get.php?filename=php-5.6.2-nts-Win32-VC11-x86.zip' data-modified='1413425458' data-created='1413425470' data-name='php-5.6.2-nts-Win32-VC11-x86.zip' data-size='19541797'><img src='img/icons/document.png'>php-5.6.2-nts-Win32-VC11-x86.zip</a></li>
-            <li><a class='itemlink' href='#' data-modified='1430093828' data-created='1430093828' data-name='workspace' data-size='2'><img src='img/icons/folder.png'>workspace</a></li>
-            <li><a class='itemlink' href='get.php?filename=.viminfo' data-modified='1459217059' data-created='1459217059' data-name='.viminfo' data-size='5472'><img src='img/icons/document.png'>.viminfo</a></li>
-            <li><a class='itemlink' href='get.php?filename=zone' data-modified='1457939665' data-created='1457939665' data-name='zone' data-size='52'><img src='img/icons/document.png'>zone</a></li>
-            <li><a class='itemlink' href='get.php?filename=jekyll.PNG' data-modified='1458010396' data-created='1458010396' data-name='jekyll.PNG' data-size='21273'><img src='img/icons/document.png'>jekyll.PNG</a></li>
-            <li><a class='itemlink' href='#' data-modified='1458007515' data-created='1404590000' data-name='Documents' data-size='9'><img src='img/icons/folder.png'>Documents</a></li>
-            <li><a class='itemlink' href='get.php?filename=lichen' data-modified='1458292776' data-created='1458292776' data-name='lichen' data-size='40'><img src='img/icons/document.png'>lichen</a></li>
-            <li><a class='itemlink' href='get.php?filename=a.out' data-modified='1438064155' data-created='1438064155' data-name='a.out' data-size='8500'><img src='img/icons/document.png'>a.out</a></li>
-            <li><a class='itemlink' href='get.php?filename=ass2spec.pdf' data-modified='1440497902' data-created='1440497902' data-name='ass2spec.pdf' data-size='120969'><img src='img/icons/document.png'>ass2spec.pdf</a></li>
-            <li><a class='itemlink' href='get.php?filename=listoffiles' data-modified='1438300797' data-created='1438300743' data-name='listoffiles' data-size='2521'><img src='img/icons/document.png'>listoffiles</a></li>
-            <li><a class='itemlink' href='#' data-modified='1440554082' data-created='1438064609' data-name='CSSE2310' data-size='11'><img src='img/icons/folder.png'>CSSE2310</a></li>
-            <li><a class='itemlink' href='get.php?filename=PortableApps.com_Platform_Setup_12.0.5.paf.exe' data-modified='1427166112' data-created='1427166165' data-name='PortableApps.com_Platform_Setup_12.0.5.paf.exe' data-size='3762664'><img src='img/icons/document.png'>PortableApps.com_Platform_Setup_12.0.5.paf.exe</a></li>
-            <li><a class='itemlink' href='#' data-modified='1407207177' data-created='1407207177' data-name='.adobe' data-size='4'><img src='img/icons/folder.png'>.adobe</a></li>
-            <li><a class='itemlink' href='get.php?filename=XxXitemXxX.txt' data-modified='1459217077' data-created='1459217059' data-name='XxXitemXxX.txt' data-size='38'><img src='img/icons/document.png'>XxXitemXxX.txt</a></li>
-            <li><a class='itemlink' href='get.php?filename=students.txt' data-modified='1458014611' data-created='1458014610' data-name='students.txt' data-size='131339'><img src='img/icons/document.png'>students.txt</a></li>
-            <li><a class='itemlink' href='get.php?filename=lab7 prep.circ' data-modified='1427333272' data-created='1427333272' data-name='lab7 prep.circ' data-size='9114'><img src='img/icons/document.png'>lab7 prep.circ</a></li>
-        </ol>
+</div>
+<div class="jumbotron files row">
+    <div class="row" id="editrow">
+        <pre id="editor">
+import time
+
+def testing():
+	print 'heyyyyyy'
+
+new = open('testoutput.txt', 'w')
+new.close
+
+i = 20
+
+while i:
+	with open('testoutput.txt', 'a') as myfile:
+		myfile.write('append' + str(i))
+	i = i - 1
+	testing()
+	time.sleep(30)
+        </pre>
     </div>
 </div>
 
 <script src="js/jquery.js"></script>
 <script src="bootstrap/bootstrap.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="bootstrap/ie10-viewport-bug-workaround.js"></script>
-<script src="js/interface.js" type="text/javascript"></script>
-
+<script src="bootstrap/ie10-viewport-bug-workaround.js"></script><script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/edit.js" type="text/javascript"></script>
 </body>
 </html>

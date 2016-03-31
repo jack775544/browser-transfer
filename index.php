@@ -20,7 +20,7 @@ unset($_SESSION["remote"]);
             </div>
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username" value="s4356183" class="form-control"/><br>
+                <input type="text" name="username" id="username" class="form-control"/><br>
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" class="form-control"/><br>
             </div>
