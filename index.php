@@ -1,32 +1,33 @@
 <?php
+// If someone backs into the login page it should log them out
 session_start();
-if ((isset($_SESSION["username"])) && (isset($_SESSION["password"])) && (isset($_SESSION["remote"]))) {
-    header("Location:files.php");
-}
+unset($_SESSION["username"]);
+unset($_SESSION["password"]);
+unset($_SESSION["remote"]);
 ?>
 <html>
 <head>
-    <title>Browser Transfer</title>
-    <link rel="stylesheet" href="css/filelist.css">
+    <?php include 'includes/head.php'; ?>
 </head>
 <body>
-
-<form action="session.php" method="post">
-    <label for="remote">SFTP Server Address:</label>
-    <input type="text" name="remote" id="remote" value="remote.labs.eait.uq.edu.au"/><br>
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" value="s4356183"/><br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" /><br>
-    <br />
-    <input type="submit" name="submit" value="Submit" />
-</form>
-
-<!--<input type="text" id="username">-->
-<!--<input type="password" id="password">-->
-<!--<input type="button" id="submit">-->
-<div id="test"></div>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/interface.js"></script>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Browser Transfer</h1>
+        <form action="session.php" method="post" id="loginform">
+            <div class="form-group">
+                <label for="remote">SFTP Server Address:</label>
+                <input type="text" name="remote" id="remote" value="remote.labs.eait.uq.edu.au" class="form-control"/><br>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" value="s4356183" class="form-control"/><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control"/><br>
+            </div>
+            <input type="submit" name="submit" value="Submit" class="btn"/>
+        </form>
+    </div>
+</div>
+<?php include 'includes/bootstrapjs.php'; ?>
 </body>
 </html>
