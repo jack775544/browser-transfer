@@ -1,8 +1,5 @@
 $(document).ready(function () {
-    var username;
-    var password;
-
-    $('.itemlink').click(function(e){
+    $('.itemlink').click(function (e) {
         e.preventDefault();
         var url = this.href;
         var name = this.dataset.name;
@@ -10,32 +7,37 @@ $(document).ready(function () {
         $("body").append(lightbox);
     });
 
-    var buildLightbox = buildLightbox = function(name, url, created, modified, size, linkname){
+    var buildLightbox = buildLightbox = function (name, url, created, modified, size, linkname) {
         var lightbox = $('<div></div>', {id: 'lightbox'});
         var content = $('<div></div>', {class: 'container'});
         var jumbo = $('<div></div>', {class: 'jumbotron'});
-        $('<div id="closeLightbox"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>').appendTo(jumbo);
-        $('<h2>' + name + '</h2>').appendTo(jumbo);
+        var titlerow = $('<div class="row"></div>').appendTo(jumbo);
+        $('<h2>' + name + '</h2>').appendTo(titlerow);
+        var closeSpan = $('<span></span>');
+        var closeLink = $('<a id="closeLink">[X]</a>');
+        closeLink.appendTo(closeSpan);
+        closeSpan.appendTo(titlerow);
         $('<div> Date Created: ' + created + '</div>').appendTo(jumbo);
         $('<div> Last Modified: ' + modified + '</div>').appendTo(jumbo);
         $('<div> Size: ' + size + ' bytes</div>').appendTo(jumbo);
-        $('<a href="'+ url + '">Download</a>').appendTo(jumbo);
+        $('<a href="' + url + '">Download</a>').appendTo(jumbo);
         $('<br>').appendTo(jumbo);
-        $('<a href="edit.php?filename='+ linkname + '" target="_blank">Edit</a>').appendTo(jumbo);
+        $('<a href="edit.php?filename=' + linkname + '" target="_blank">Edit</a>').appendTo(jumbo);
 
         content.append(jumbo);
         lightbox.append(content);
 
         content.click(stopProp);
         lightbox.click(closeLightbox);
+        closeLink.click(closeLightbox);
         return lightbox;
     };
 
-    function stopProp(e){ // and roll!
+    function stopProp(e) { // and roll!
         e.stopPropagation();
     }
 
-    function closeLightbox(e){
+    function closeLightbox(e) {
         e.stopPropagation();
         $("#lightbox").remove();
     }

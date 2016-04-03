@@ -23,7 +23,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
     </div>
 </div>
 <div class="jumbotron row files">
-    <div class="row">
+    <div class="row" id="editoptions">
         <button type="button" id="refresh" class="btn"><span class="glyphicon glyphicon-refresh"
                                                              aria-hidden="true"></span>Refresh
         </button>

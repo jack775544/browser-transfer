@@ -23,12 +23,10 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
     </div>
 </div>
 <div class="jumbotron row files">
-    <div class="row">
-        <button type="button" id="refresh" class="btn"><span class="glyphicon glyphicon-refresh"
-                                                             aria-hidden="true"></span>Refresh
-        </button>
-        <button type="button" id="upload" class="btn"><span class="glyphicon glyphicon-open" aria-hidden="true"></span>Upload
-        </button>
+    <div class="row" id="editoptions">
+        <button type="button" id="save" class="btn"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>Save</button>
+        <button type="button" id="download" class="btn"><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Download</button>
+        <select id="modes"></select>
     </div>
     <div class="row">
         /home/students/s4356183
@@ -36,8 +34,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
 </div>
 <div class="jumbotron files row" id="editjumbo">
     <div class="row" id="editrow">
-        <pre id="editor">
-<?php
+        <pre id="editor"><?php
 include 'vendor/autoload.php';
 
 $username = $_SESSION["username"];
@@ -50,8 +47,7 @@ if (!$sftp->login($username, $password)) {
 
 $filename = $_GET['filename'];
 echo $sftp->get($filename);
-?>
-        </pre>
+?></pre>
     </div>
 </div>
 
