@@ -1,3 +1,5 @@
+var ajaxConnect;
+
 $(document).ready(function () {
     $('.itemlink').click(function (e) {
         e.preventDefault();
@@ -43,9 +45,9 @@ $(document).ready(function () {
         $("#lightbox").remove();
     }
 
-    function ajaxConnect() {
+    ajaxConnect = function() {
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: './ls.php',
             context: document.body
             //data: {"username": username, "password": password}
@@ -57,29 +59,43 @@ $(document).ready(function () {
 
     function connect(r) {
         console.log(r);
-        $('#test').append('<ol id="items" style="list-style-type: none"></ol>');
-        for (var i = 0; i < r.items.length; i++) {
-            var file = r.items[i].filename;
-            var type;
-            var close;
-            var size = '';
-            if (file[5] == 2) {
-                type = '<span style="color:red">Folder: ';
-                close = '</span>';
-            } else if (file[5] == 1) {
-                type = '<span>File: <a href="get.php?filename=' + file[8] + '">';
-                size = ' ' + file[0] + 'kb';
-                close = '</span></a>' + size;
-            } else {
-                type = '<span>Other: ';
-                close = '</span>';
+
+        for (var i=0; i<r.items.length; i++){
+            var item = r.items[i].filename;
+            var size = item[0];
+            var type = item[5]; // 1 is file, 2 is folder, 3 is symlink, 4 is other
+            var created = item[6];
+            var modified = item[7];
+            var filename = item[8];
+            var textType = 'type';
+            var img = 'img';
+            var url = 'get.php?filename=' + item[8];
+
+            switch (Number(type)) {
+                case 1:
+                    img = 'img/icons/document.png';
+                    url = 'get.php?filename=' + filename;
+                    textType = 'file';
+                    break;
+                case 2:
+                    img = 'img/icons/folder.png';
+                    url = '#';
+                    textType = 'folder';
+                    break;
+                default:
+                    img = 'img/icons/folder.png';
+                    url = '#';
+                    textType = 'other';
+                    break;
             }
-            //$('#items').append();
-            $('#items').append('<li>' + type + file[8] + '</li>');
-            //$('#items').append(close);
-            //$('#items').append('</li>');
-            console.log('rip');
+
+            console.log(buildListItem(url, modified, created, filename, size, textType, img));
         }
+    }
+
+    function buildListItem(url, modified, created, filename, size, textType, img){
+        var tag = "<li><a class='itemlink' href='{0}' data-modified='{1}' data-created='{2}' data-name='{3}' data-size='{4}' data-type='{5}' data-linkname='{3}'><img src='{6}'>{3}</a></li>";
+        return tag.format(url, modified, created, filename, size, textType, img);
     }
 
 });
