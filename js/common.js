@@ -2,7 +2,7 @@ var common = {};
 
 /**
  * Get the parameters from the pages GET args
- * @returns An array of maps for key => value
+ * @returns A map of the key value get pairs
  */
 common.getParameters = function(){
     var p = {};
@@ -13,4 +13,9 @@ common.getParameters = function(){
         p[param[0]] = param[1];
     }
     return p;
+};
+
+common.buildUrl = function(base, params){
+    var strParams = $.param(params);
+    return base + '?' + strParams;
 };

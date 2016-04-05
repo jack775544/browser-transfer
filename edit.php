@@ -24,30 +24,39 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
 </div>
 <div class="jumbotron row files">
     <div class="row" id="editoptions">
-        <button type="button" id="save" class="btn"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>Save</button>
-        <button type="button" id="download" class="btn"><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Download</button>
+        <button type="button" id="save" class="btn"><span class="glyphicon glyphicon-floppy-disk"
+                                                          aria-hidden="true"></span>Save
+        </button>
+        <button type="button" id="download" class="btn"><span class="glyphicon glyphicon-save"
+                                                              aria-hidden="true"></span>Download
+        </button>
         <select id="modes"></select>
     </div>
     <div class="row">
-        /home/students/s4356183
+        <?php
+        if (isset($_GET['pwd'])) {
+            echo $_GET['pwd'];
+        }
+        ?>
     </div>
 </div>
 <div class="jumbotron files row" id="editjumbo">
     <div class="row" id="editrow">
         <pre id="editor"><?php
-include 'vendor/autoload.php';
+            include 'vendor/autoload.php';
 
-$username = $_SESSION["username"];
-$password = $_SESSION["password"];
+            $username = $_SESSION["username"];
+            $password = $_SESSION["password"];
 
-$sftp = new \phpseclib\Net\SFTP($_SESSION["remote"]);
-if (!$sftp->login($username, $password)) {
-    exit('Login Failed');
-}
+            $sftp = new \phpseclib\Net\SFTP($_SESSION["remote"]);
+            if (!$sftp->login($username, $password)) {
+                exit('Login Failed');
+            }
 
-$filename = $_GET['filename'];
-echo $sftp->get($filename);
-?></pre>
+            $filename = $_GET['filename'];
+            echo htmlspecialchars($sftp->get($_GET['pwd'] . '/' . $filename));
+
+            ?></pre>
     </div>
 </div>
 

@@ -30,9 +30,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         <button type="button" id="upload" class="btn"><span class="glyphicon glyphicon-open" aria-hidden="true"></span>Upload
         </button>
     </div>
-    <div class="row">
-        /home/students/s4356183
-    </div>
+    <div class="row" id="pwd"><?php include 'pwd.php'; ?></div>
 </div>
 <div class="jumbotron files row">
     <div id="filecontainer" class="row">
@@ -93,6 +91,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
 </div>
 
 <?php include 'includes/bootstrapjs.php'; ?>
+<script src="js/common.js" type="text/javascript"></script>
 <script src="js/interface.js" type="text/javascript"></script>
 </body>
 </html>

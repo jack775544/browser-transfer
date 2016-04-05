@@ -4,16 +4,6 @@ if (!isset($_SESSION)){
 }
 include 'vendor/autoload.php';
 
-if (isset($json)) {
-    if ($json == "true") {
-        header("Access-Control-Allow-Origin: *");
-        header("Content-Type: text/json");
-    }
-} else {
-    header("Access-Control-Allow-Origin: *");
-    header("Content-Type: text/json");
-}
-
 $username = $_SESSION["username"];
 $password = $_SESSION["password"];
 
@@ -23,6 +13,6 @@ if (!$sftp->login($username, $password)) {
     exit('Login Failed');
 }
 
-$ls = $sftp->pwd();
+$pwd = $sftp->pwd();
 
-echo $ls;
+echo $pwd;

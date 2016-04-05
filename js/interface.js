@@ -22,7 +22,8 @@ $(document).ready(function () {
         $('<div> Size: ' + size + ' bytes</div>').appendTo(jumbo);
         $('<a href="' + url + '">Download</a>').appendTo(jumbo);
         $('<br>').appendTo(jumbo);
-        $('<a href="edit.php?filename=' + linkname + '" target="_blank">Edit</a>').appendTo(jumbo);
+        var url = common.buildUrl('edit.php', {filename: linkname, pwd: $('#pwd').text()});
+        $('<a href="' + url + '" target="_blank">Edit</a>').appendTo(jumbo);
 
         content.append(jumbo);
         lightbox.append(content);
