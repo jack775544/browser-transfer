@@ -1,5 +1,3 @@
-var ajaxConnect;
-
 $(document).ready(function () {
     $('.itemlink').click(function (e) {
         e.preventDefault();
@@ -19,9 +17,9 @@ $(document).ready(function () {
         var closeLink = $('<a id="closeLink">[X]</a>');
         closeLink.appendTo(closeSpan);
         closeSpan.appendTo(titlerow);
-        $('<div> Date Created: ' + created + '</div>').appendTo(jumbo);
-        $('<div> Last Modified: ' + modified + '</div>').appendTo(jumbo);
-        $('<div> Size: ' + size + ' bytes</div>').appendTo(jumbo);
+        $('<div>Date Created: ' + created + '</div>').appendTo(jumbo);
+        $('<div>Last Modified: ' + modified + '</div>').appendTo(jumbo);
+        $('<div>Size: ' + size + ' bytes</div>').appendTo(jumbo);
         $('<a href="' + url + '">Download</a>').appendTo(jumbo);
         $('<br>').appendTo(jumbo);
         var url = common.buildUrl('edit.php', {filename: linkname, pwd: $('#pwd').text()});
@@ -45,22 +43,22 @@ $(document).ready(function () {
         $("#lightbox").remove();
     }
 
-    ajaxConnect = function() {
+    function ajaxConnect() {
+        var itemList = $('#items');
+        itemList.text("Loading....");
         $.ajax({
             type: "GET",
             url: './ls.php',
             context: document.body
-            //data: {"username": username, "password": password}
         }).done(function (r) {
-            //console.log(r);
             connect(r);
         });
     }
 
     function connect(r) {
-        console.log(r);
-
-        for (var i=0; i<r.items.length; i++){
+        var itemList = $('#items');
+        itemList.text("");
+        for (var i = 0; i < r.items.length; i++) {
             var item = r.items[i].filename;
             var size = item[0];
             var type = item[5]; // 1 is file, 2 is folder, 3 is symlink, 4 is other
@@ -88,14 +86,14 @@ $(document).ready(function () {
                     textType = 'other';
                     break;
             }
-
-            console.log(buildListItem(url, modified, created, filename, size, textType, img));
+            itemList.append(buildListItem(url, modified, created, filename, size, textType, img));
         }
     }
 
-    function buildListItem(url, modified, created, filename, size, textType, img){
+    function buildListItem(url, modified, created, filename, size, textType, img) {
         var tag = "<li><a class='itemlink' href='{0}' data-modified='{1}' data-created='{2}' data-name='{3}' data-size='{4}' data-type='{5}' data-linkname='{3}'><img src='{6}'>{3}</a></li>";
         return tag.format(url, modified, created, filename, size, textType, img);
     }
 
+    ajaxConnect();
 });
