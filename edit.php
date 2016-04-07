@@ -43,7 +43,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
 <div class="jumbotron files row" id="editjumbo">
     <div class="row" id="editrow">
         <pre id="editor"><?php
-            include 'vendor/autoload.php';
+            include 'phpseclib/vendor/autoload.php';
 
             $username = $_SESSION["username"];
             $password = $_SESSION["password"];

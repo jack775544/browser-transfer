@@ -8,25 +8,10 @@ INSTALLATION
 ---
 Download phpseclib to the target directory and install it.
 
-    git clone https://github.com/phpseclib/phpseclib.git
+    git clone https://github.com/jack775544/browser-transfer.git
     cd phpseclib
     curl -sS https://getcomposer.org/installer | php
     php composer.phar install
-
-Next remove conflicting files from the downloaded repo.
-
-    rm -rf .git
-    rm .gitattributes
-    rm .gitignore
-    rm LICENSE
-    rm README.md
-
-Now install the repo
-
-    git init
-    git remote add origin https://github.com/jack775544/browser-transfer.git
-    git fetch
-    git checkout -t origin/master
 
 Notes
 ---
