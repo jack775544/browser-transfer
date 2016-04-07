@@ -40,7 +40,7 @@ $(document).ready(function () {
         itemList.text("Loading....");
         $.ajax({
             type: "GET",
-            url: './ls.php',
+            url: 'commands/ls.php',
             context: document.body
         }).done(function (r) {
             connect(r);
@@ -64,7 +64,7 @@ $(document).ready(function () {
             switch (Number(type)) {
                 case 1:
                     img = 'img/icons/document.png';
-                    url = 'get.php?filename=' + filename;
+                    url = 'commands/get.php?filename=' + filename;
                     textType = 'file';
                     break;
                 case 2:
