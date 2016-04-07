@@ -2,7 +2,7 @@
 if (!isset($_SESSION)){
     session_start();
 }
-include '../phpseclib/vendor/autoload.php';
+include 'phpseclib/vendor/autoload.php';
 
 $username = $_SESSION["username"];
 $password = $_SESSION["password"];

@@ -1,5 +1,5 @@
 <?php
-include '../phpseclib/vendor/autoload.php';
+include 'phpseclib/vendor/autoload.php';
 
 session_start();
 

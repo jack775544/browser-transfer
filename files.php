@@ -17,7 +17,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         <h1>Browser Transfer</h1>
     </div>
     <div class="col-sm-1">
-        <form method="post" action="commands/logout.php">
+        <form method="post" action="logout.php">
             <input type="submit" name="logout" value="Logout" class="btn" id="logout">
         </form>
     </div>
@@ -30,7 +30,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         <button type="button" id="upload" class="btn"><span class="glyphicon glyphicon-open" aria-hidden="true"></span>Upload
         </button>
     </div>
-    <div class="row" id="pwd"><?php include 'commands/pwd.php'; ?></div>
+    <div class="row" id="pwd"><?php include 'pwd.php'; ?></div>
 </div>
 <div class="jumbotron files row">
     <div id="filecontainer" class="row">

@@ -17,7 +17,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
         <h1>Browser Transfer</h1>
     </div>
     <div class="col-sm-1">
-        <form method="post" action="commands/logout.php">
+        <form method="post" action="logout.php">
             <input type="submit" name="logout" value="Logout" class="btn" id="logout">
         </form>
     </div>
@@ -55,6 +55,7 @@ if ((!isset($_SESSION["username"])) || (!isset($_SESSION["password"])) || (!isse
 
             $filename = $_GET['filename'];
             echo htmlspecialchars($sftp->get($_GET['pwd'] . '/' . $filename));
+
             ?></pre>
     </div>
 </div>
