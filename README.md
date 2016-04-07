@@ -9,6 +9,7 @@ INSTALLATION
 Download phpseclib to the target directory and install it.
 
     git clone https://github.com/jack775544/browser-transfer.git
+    cd browser-transfer
     git submodule init
     git submodule update
     cd phpseclib
