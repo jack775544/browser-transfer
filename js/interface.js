@@ -1,13 +1,5 @@
 $(document).ready(function () {
-    $('.itemlink').click(function (e) {
-        e.preventDefault();
-        var url = this.href;
-        var name = this.dataset.name;
-        var lightbox = buildLightbox(this.dataset.name, this.href, this.dataset.created, this.dataset.modified, this.dataset.size, this.dataset.linkname);
-        $("body").append(lightbox);
-    });
-
-    var buildLightbox = buildLightbox = function (name, url, created, modified, size, linkname) {
+    function buildLightbox(name, url, created, modified, size, linkname) {
         var lightbox = $('<div></div>', {id: 'lightbox'});
         var content = $('<div></div>', {class: 'container'});
         var jumbo = $('<div></div>', {class: 'jumbotron'});
@@ -32,7 +24,7 @@ $(document).ready(function () {
         lightbox.click(closeLightbox);
         closeLink.click(closeLightbox);
         return lightbox;
-    };
+    }
 
     function stopProp(e) { // and roll!
         e.stopPropagation();
@@ -88,10 +80,21 @@ $(document).ready(function () {
             }
             itemList.append(buildListItem(url, modified, created, filename, size, textType, img));
         }
+        $('.file').click(function (e) {
+            e.preventDefault();
+            var url = this.href;
+            var name = this.dataset.name;
+            var lightbox = buildLightbox(this.dataset.name, this.href, this.dataset.created, this.dataset.modified, this.dataset.size, this.dataset.linkname);
+            $("body").append(lightbox);
+        });
+
+        $('.folder').click(function (e) {
+            e.preventDefault();
+        });
     }
 
     function buildListItem(url, modified, created, filename, size, textType, img) {
-        var tag = "<li><a class='itemlink' href='{0}' data-modified='{1}' data-created='{2}' data-name='{3}' data-size='{4}' data-type='{5}' data-linkname='{3}'><img src='{6}'>{3}</a></li>";
+        var tag = "<li><a class='itemlink {5}' href='{0}' data-modified='{1}' data-created='{2}' data-name='{3}' data-size='{4}' data-type='{5}' data-linkname='{3}'><img src='{6}'>{3}</a></li>";
         return tag.format(url, modified, created, filename, size, textType, img);
     }
 
