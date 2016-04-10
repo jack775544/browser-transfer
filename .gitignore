@@ -11,3 +11,5 @@ composer.lock
 phpunit.xml.dist
 tests/
 travis/
+
+/.vscode
