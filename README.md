@@ -6,7 +6,6 @@ Takes extensive use of the [phpseclib library](https://github.com/phpseclib/phps
 
 INSTALLATION
 ---
-Download phpseclib to the target directory and install it.
 
     git clone https://github.com/jack775544/browser-transfer.git
     cd browser-transfer
