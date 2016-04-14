@@ -4,7 +4,7 @@ session_start();
 unset($_SESSION["username"]);
 unset($_SESSION["password"]);
 unset($_SESSION["remote"]);
-$_SESSION['flash'] = 'This is a super fun error message';
+//$_SESSION['flash'] = 'This is a super fun error message';
 ?>
 <html>
 <head>
@@ -42,5 +42,6 @@ $_SESSION['flash'] = 'This is a super fun error message';
     </div>
 </div>
 <?php include 'includes/bootstrapjs.php'; ?>
+<script src="js/common.js" type="text/javascript"></script>
 </body>
 </html>

@@ -43,6 +43,9 @@ $(document).ready(function () {
             url: './ls.php',
             context: document.body
         }).done(function (r) {
+            if (r === 'ERROR: Login Failed'){
+                common.logoutTimeout();
+            }
             connect(r);
         });
     }

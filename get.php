@@ -1,5 +1,7 @@
 <?php
 include 'phpseclib/vendor/autoload.php';
+include 'includes/common.php';
+
 
 session_start();
 
@@ -8,10 +10,12 @@ $password = $_SESSION["password"];
 
 $sftp = new \phpseclib\Net\SFTP($_SESSION["remote"]);
 if (!$sftp->login($username, $password)) {
+    $params['flash'] = 'ERROR: Login Failed';
+    $url = buildUrl('logout.php', $params);
+    header("Location:" . $url);
     exit('Login Failed');
 }
 $filename = $_GET["filename"];
-//$filename = 'ass1spec.pdf';
 header('Content-Type: application/octet-stream');
 header("Content-Transfer-Encoding: Binary");
 header("Content-disposition: attachment; filename=" . urlencode($filename) . "");

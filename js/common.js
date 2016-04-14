@@ -25,7 +25,7 @@ common.getParameters = function(){
     var p = {};
     var location = window.location.search.substring(1);
     var args = location.split("&");
-    for (i=0; i<args.length; i++){
+    for (var i=0; i<args.length; i++){
         var param = args[i].split("=");
         p[param[0]] = param[1];
     }
@@ -41,4 +41,8 @@ common.getParameters = function(){
 common.buildUrl = function(base, params){
     var strParams = $.param(params);
     return base + '?' + strParams;
+};
+
+common.logoutTimeout = function(){
+    window.location = common.buildUrl('logout.php', {'flash': 'Error: SFTP Connection Timeout'});
 };
