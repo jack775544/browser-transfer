@@ -6,6 +6,7 @@ unset($_SESSION["password"]);
 unset($_SESSION["remote"]);
 //$_SESSION['flash'] = 'This is a super fun error message';
 ?>
+<!DOCTYPE HTML>
 <html>
 <head>
     <?php include 'includes/head.php'; ?>
